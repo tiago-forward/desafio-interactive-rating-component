@@ -1,15 +1,12 @@
 const opcoesDeClassificacao = document.getElementsByName('classification');
-const button = document.querySelector('#submit');
+const botaoEnviar = document.querySelector('#submit');
 
-button.addEventListener('click', () => {
+botaoEnviar.addEventListener('click', () => {
 
     function verificacaoDeSelecao() {
         opcaoSelecionada = '';
         opcoesDeClassificacao.forEach(function(opcao) {
-            if (opcao.checked) {
-                opcaoSelecionada = opcao.nextElementSibling.textContent;
-                console.log('Opção selecionada:', opcaoSelecionada);
-            };
+            opcao.checked ? opcaoSelecionada = opcao.nextElementSibling.textContent : null
         });
         
         if (opcaoSelecionada === '') {
@@ -17,18 +14,18 @@ button.addEventListener('click', () => {
             return;
         };
 
-        function alterandoAPaginaSeAOpcaoFoiSelecionada() {
-            const secaoDeClassificao = document.querySelector('.component-card.active');
-            secaoDeClassificao.classList.remove('active');
-            
-            const secaoThankyou = secaoDeClassificao.nextElementSibling;
-            secaoThankyou.classList.add('active');
+        alterandoAPaginaSeAOpcaoFoiSelecionada(opcaoSelecionada);
+    };
 
-            const selectedOption = document.getElementById('selected-option');
-            selectedOption.innerHTML = `You selected ${opcaoSelecionada} out of ${opcoesDeClassificacao.length}`;
-        };
+    function alterandoAPaginaSeAOpcaoFoiSelecionada(opcaoSelecionada) {
+        const secaoDeClassificao = document.querySelector('.component-card.active');
+        secaoDeClassificao.classList.remove('active');
+        
+        const secaoDeAgradecimento = secaoDeClassificao.nextElementSibling;
+        secaoDeAgradecimento.classList.add('active');
 
-        alterandoAPaginaSeAOpcaoFoiSelecionada();
+        const descricaoDaAvaliacao = document.getElementById('selected-option');
+        descricaoDaAvaliacao.innerHTML = `You selected ${opcaoSelecionada} out of ${opcoesDeClassificacao.length}`;
     };
 
     verificacaoDeSelecao();
