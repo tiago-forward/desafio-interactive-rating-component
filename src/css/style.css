@@ -1,0 +1,114 @@
+/* First Page */
+
+.component-card-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-card {
+    display: none;
+    background: rgb(35,42,52);
+    background: rgb(35,42,52);
+    background: linear-gradient(180deg, rgba(35,42,52,1) 0%, rgba(23,30,40,1) 30%);
+    width: 410px;
+    padding: 50px 35px 35px 35px;
+    border-radius: 30px;
+}
+
+.component-card.active {
+    display: block;
+}
+
+.component-card .icon-star {
+    border: 15px solid var(--dark-blue);
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.component-card .content .title {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.component-card .content .description {
+    color: var(--light-grey);
+    margin-bottom: 25px;
+}
+
+.component-card .classification-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.component-card .classification {
+    background-color: var(--dark-blue);
+    color: var(--light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    width: 53px;
+    height: 53px;
+    margin-bottom: 28px;
+    transition: 0.3s ease;
+}
+
+.component-card .classification.selected {
+    color: var(--white);
+    background-color: var(--light-grey);
+}
+
+.component-card .classification:hover {
+    cursor: pointer;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.component-card .submit {
+    background-color: var(--orange);
+    color: var(--white);
+    width: 100%;
+    height: 45px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.component-card .submit:hover {
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+/* Second Page */
+
+.component-card .content .title.center,
+.component-card .content .description.center {
+    text-align: center;
+}
+
+.component-card .credit-machine {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.component-card .selected-option-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.component-card .selected-option-container .selected-option {
+    background-color: var(--dark-blue);
+    color: var(--orange);
+    border-radius: 25px;
+    text-align: center;
+    padding: 8px 20px;
+}
