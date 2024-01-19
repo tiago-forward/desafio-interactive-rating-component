@@ -44,7 +44,7 @@
     justify-content: space-between;
 }
 
-.component-card .classification {
+.component-card .classification-list .classification {
     background-color: var(--dark-blue);
     color: var(--light-grey);
     display: flex;
@@ -58,15 +58,20 @@
     transition: 0.3s ease;
 }
 
-.component-card .classification.selected {
+.component-card .classification-list .classification:hover {
+    cursor: pointer;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.component-card .classification-list .options:checked + .classification {
     color: var(--white);
     background-color: var(--light-grey);
 }
 
-.component-card .classification:hover {
-    cursor: pointer;
-    background-color: var(--orange);
-    color: var(--white);
+.component-card .classification-list .options {
+    position: absolute;
+    opacity: 0;
 }
 
 .component-card .submit {
